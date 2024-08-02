@@ -1,17 +1,14 @@
-class_name Test
+class_name Scene
 extends Node2D
 
 const BUBBLE: PackedScene = preload("res://Bubble/bubble.tscn")
 
 @export var audio_player: AudioStreamPlayer2D
-@export var button_container: GridContainer
-@export var spawn_point_left: Marker2D
 @export var timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_create_bubble()
-	
 	
 	
 func _create_bubble() -> void:

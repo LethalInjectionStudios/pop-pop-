@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhcdpmmiowhwy"]
+
+[ext_resource type="Script" path="res://MainScene/scene.gd" id="1_wu84x"]
+[ext_resource type="AudioStream" uid="uid://c2n6qkftplo0v" path="res://Bubble/pop.ogg" id="2_lspf2"]
+
+[node name="Scene" type="Node2D" node_paths=PackedStringArray("audio_player", "timer")]
+script = ExtResource("1_wu84x")
+audio_player = NodePath("AudioStreamPlayer2D")
+timer = NodePath("Timer")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 810.0
+offset_bottom = 811.0
+color = Color(0, 0.701961, 0.701961, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_lspf2")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
